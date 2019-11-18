@@ -1,0 +1,44 @@
+# Todd Qualiano Assignment 1 Output
+
+# output using command:
+# ./wordcount.py --count small.txt
+
+-- 1
+are 3
+at 1
+be 3
+but 1
+coach 1
+football 1
+least 1
+need 1
+not 3
+should 1
+to 2
+used 1
+we 6
+what 3
+
+# output using command:
+# ./wordcount.py --topcount alice.txt
+
+the 1605
+and 766
+to 706
+a 614
+she 518
+of 493
+said 421
+it 362
+in 352
+was 333
+you 265
+i 261
+as 249
+that 222
+alice 221
+her 208
+at 206
+had 176
+with 169
+all 155

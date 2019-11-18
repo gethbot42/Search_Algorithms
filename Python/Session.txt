@@ -1,0 +1,143 @@
+BREADTH FIRST SEARCH
+
+Script started on Tue 13 Nov 2018 03:39:01 PM STD
+
+>>> from display import Displayable
+>>> Displayable.max_display_level = 4
+>>> import searchProblem
+>>> from breadthFirst Searcher import BreadthFirstSearcher
+>>> searcher1 = BreadthFirstSearcher(searchProblem.problem1)
+>>> searcher1.search()
+
+Expanding: a (cost: 0 )
+Neighbors are [a --> b, a --> c]
+Frontier: [a --> b, a --> c]
+Expanding: a --> c (cost: 3 )
+Neighbors are [c --> d, c --> g]
+Frontier: [a --> c --> d, a --> c --> g, a --> b]
+Expanding: a --> b (cost: 1 )
+Neighbors are [b --> d, b --> c]
+Frontier: [a --> b --> d, a --> b --> c, a --> c --> d, a --> c --> g]
+Expanding: a --> c --> g (cost: 6 )
+4 paths have been expanded and 3 paths remain in the frontier
+a --> c --> g
+
+Script done on Tue 13 Nov 2018 03:40:49 PM STD
+
+
+UNIFORM COST SEARCH
+
+Script started on Tue 13 Nov 2018 03:45:35 PM STD
+
+>>> from display import Displayable
+>>> Displayable.max_display_level = 4
+>>> import searchProblem
+>>> from uniformCostSearcher import UniformCostSearcher
+>>> searcher1 = UniformCostSearcher(searchProblem.problem1)
+>>> searcher1.search()
+
+Expanding: a (cost: 0 )
+Neighbors are [a --> b, a --> c]
+Frontier: [(1, -3, 'a --> b'), (3, -2, 'a --> c')]
+Expanding: a --> b (cost: 1 )
+Neighbors are [b --> d, b --> c]
+Frontier: [(2, -4, 'a --> b --> c'), (3, -2, 'a --> c'), (4, -5, 'a --> b --> d')]
+Expanding: a --> b --> c (cost: 2 )
+Neighbors are [c --> d, c --> g]
+Frontier: [(3, -7, 'a --> b --> c --> d'), (3, -2, 'a --> c'), (5, -6, 'a --> b --> c --> g'), (4, -5, 'a --> b --> d')]
+Expanding: a --> b --> c --> d (cost: 3 )
+Neighbors are [d --> g]
+Frontier: [(3, -2, 'a --> c'), (4, -8, 'a --> b --> c --> d --> g'), (5, -6, 'a --> b --> c --> g'), (4, -5, 'a --> b --> d')]
+Expanding: a --> c (cost: 3 )
+Neighbors are [c --> d, c --> g]
+Frontier: [(4, -10, 'a --> c --> d'), (4, -8, 'a --> b --> c --> d --> g'), (5, -6, 'a --> b --> c --> g'), (6, -9, 'a --> c --> g'), (4, -5, 'a --> b --> d')]
+Expanding: a --> c --> d (cost: 4 )
+Neighbors are [d --> g]
+Frontier: [(4, -8, 'a --> b --> c --> d --> g'), (4, -5, 'a --> b --> d'), (5, -6, 'a --> b --> c --> g'), (6, -9, 'a --> c --> g'), (5, -11, 'a --> c --> d --> g')]
+Expanding: a --> b --> c --> d --> g (cost: 4 )
+7 paths have been expanded and 4 paths remain in the frontier
+a --> b --> c --> d --> g
+
+Script done on Tue 13 Nov 2018 03:48:30 PM STD
+
+
+DEPTH LIMITED SEARCH
+
+Script started on Tue 13 Nov 2018 03:53:18 PM STD
+
+>>> from display import Displayable
+>>> Displayable.max_display_level = 4
+>>> import searchProblem
+>>> searcher1 = DepthLimitedSearcher(0, searchProblem.problem1)
+>>> searcher1.search()
+
+Expanding: a (cost: 0 )
+No (more) solutions. Total of 1 paths expanded.
+
+>>> searcher1 = DepthLimitedSearcher(1, searchProblem.problem1)
+>>> searcher1.search()
+
+Expanding: a (cost: 0 )
+Neighbors are [a --> b, a --> c]
+Frontier: [a --> c, a --> b]
+Expanding: a --> b (cost: 1 )
+Expanding: a --> c (cost: 3 )
+No (more) solutions. Total of 3 paths expanded.
+
+>>> searcher1 = DepthLimitedSearcher(2, searchProblem.problem1)
+>>> searcher1.search()
+
+Expanding: a (cost: 0 )
+Neighbors are [a --> b, a --> c]
+Frontier: [a --> c, a --> b]
+Expanding: a --> b (cost: 1 )
+Neighbors are [b --> d, b --> c]
+Frontier: [a --> c, a --> b --> c, a --> b --> d]
+Expanding: a --> b --> d (cost: 4 )
+Expanding: a --> b --> c (cost: 2 )
+Expanding: a --> c (cost: 3 )
+Neighbors are [c --> d, c --> g]
+Frontier: [a --> c --> g, a --> c --> d]
+Expanding: a --> c --> d (cost: 4 )
+Expanding: a --> c --> g (cost: 6 )
+7 paths have been expanded and 0 paths remain in the frontier
+a --> c --> g
+
+Script done on Tue 13 Nov 2018 03:55:32 PM STD
+
+
+ITERATIVE DEEPENING SEARCH
+
+Script started on Tue 13 Nov 2018 04:00:15 PM STD
+
+>>> from display import Displayable
+>>> Displayable.max_display_level = 4
+>>> from iterativeDeepeningSearch import IterativeDeepeningSearcher
+>>> searcher1 = IterativeDeepeningSearcher(searchProblem.problem1)
+>>> searcher1.iterativeDeepeningSearch()
+
+Expanding: a (cost: 0 )
+No (more) solutions. Total of 1 paths expanded.
+Expanding: a (cost: 0 )
+Neighbors are [a --> b, a --> c]
+Frontier: [a --> c, a --> b]
+Expanding: a --> b (cost: 1 )
+Expanding: a --> c (cost: 3 )
+No (more) solutions. Total of 4 paths expanded.
+Expanding: a (cost: 0 )
+Neighbors are [a --> b, a --> c]
+Frontier: [a --> c, a --> b]
+Expanding: a --> b (cost: 1 )
+Neighbors are [b --> d, b --> c]
+Frontier: [a --> c, a --> b --> c, a --> b --> d]
+Expanding: a --> b --> d (cost: 4 )
+Expanding: a --> b --> c (cost: 2 )
+Expanding: a --> c (cost: 3 )
+Neighbors are [c --> d, c --> g]
+Frontier: [a --> c --> g, a --> c --> d]
+Expanding: a --> c --> d (cost: 4 )
+Expanding: a --> c --> g (cost: 6 )
+11 paths have been expanded and 0 paths remain in the frontier
+a --> c --> g
+
+Script done on Tue 13 Nov 2018 04:02:38 PM STD
